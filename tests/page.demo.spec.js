@@ -1,0 +1,30 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://intelliflow.in/#/');
+  await page.getByPlaceholder('Workspace').click();
+  await page.getByPlaceholder('Workspace').fill('intelliflow');
+  await page.getByPlaceholder('Email ID').click();
+  await page.getByPlaceholder('Email ID').fill('info@intelliflow.ai');
+  await page.getByPlaceholder('Password').click();
+  await page.getByPlaceholder('Password').fill('Welcome@123');
+  await page.getByRole('img', { name: 'Forgot' }).click();
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.getByPlaceholder('Email ID').click();
+  await page.getByPlaceholder('Email ID').fill('info@intelliflow.io');
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.locator('.svg-fill').click();
+  await page.getByPlaceholder('Enter Application Name Here').click();
+  await page.getByPlaceholder('Enter Application Name Here').fill('Name2');
+  await page.getByPlaceholder('Enter Description Here').click();
+  await page.getByPlaceholder('Enter Description Here').fill('App');
+  await page.locator('#create-app-uploaded-img').click();
+  await page.getByLabel('Click to UploadAccepted file SVG, PNG OR JPG').setInputFiles('App Store.png');
+  await page.locator('#create-app-device-support-web').click();
+  await page.getByRole('button', { name: 'Create App' }).click();
+  await page.locator('#dropdown-basic').click();
+  await page.getByRole('button', { name: 'Logout' }).click();
+});

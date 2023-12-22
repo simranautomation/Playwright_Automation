@@ -1,0 +1,38 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://app.dev.intelliflow.in/');
+  await page.getByPlaceholder('Workspace').click();
+  await page.getByPlaceholder('Workspace').fill('testers');
+  await page.getByPlaceholder('Email ID').click();
+  await page.getByPlaceholder('Email ID').fill('simranghodke');
+  await page.getByPlaceholder('Email ID').press('ArrowLeft');
+  await page.getByPlaceholder('Email ID').press('ArrowLeft');
+  await page.getByPlaceholder('Email ID').press('ArrowLeft');
+  await page.getByPlaceholder('Email ID').press('ArrowLeft');
+  await page.getByPlaceholder('Email ID').press('ArrowLeft');
+  await page.getByPlaceholder('Email ID').press('ArrowLeft');
+  await page.getByPlaceholder('Email ID').fill('simran.ghodke');
+  await page.getByPlaceholder('Email ID').press('ArrowRight');
+  await page.getByPlaceholder('Email ID').press('ArrowRight');
+  await page.getByPlaceholder('Email ID').press('ArrowRight');
+  await page.getByPlaceholder('Email ID').press('ArrowRight');
+  await page.getByPlaceholder('Email ID').press('ArrowRight');
+  await page.getByPlaceholder('Email ID').press('ArrowRight');
+  await page.getByPlaceholder('Email ID').fill('simran.ghodke@intelliflow.ai');
+  await page.getByPlaceholder('Password').click();
+  await page.getByPlaceholder('Password').fill('Simran@1996');
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.getByRole('button', { name: '# Menu' }).click();
+  await page.getByRole('link', { name: 'Admin Dashboard' }).click();
+  await page.getByRole('link', { name: 'Report Builder Easily generate customised reports and gain insights from your data using a user-friendly report builder.' }).click();
+  await page.getByRole('row', { name: 'App simran.ghodke@intelliflow.ai simran.ghodke@intelliflow.ai 12-07-2023, 16:21:09 DRAFT ...' }).locator('#dropdown-basic').click();
+  await page.getByRole('cell', { name: '... Edit Delete' }).locator('#dropdown-basic').click();
+  await page.getByRole('row', { name: 'App simran.ghodke@intelliflow.ai simran.ghodke@intelliflow.ai 12-07-2023, 16:21:09 DRAFT ...' }).locator('#dropdown-basic').click();
+  await page.getByRole('button', { name: 'Edit' }).click();
+  await page.locator('.Droppable > div').click();
+  await page.getByRole('button', { name: 'Add query' }).click();
+  await page.getByLabel('Close').click();
+  await page.locator('#dropdown-basic').click();
+  await page.getByRole('button', { name: 'Logout' }).click();
+});
